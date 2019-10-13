@@ -8,8 +8,8 @@
       >
         <div class="mui-scroll">
           <a
-            :class="['mui-control-item', item.id==0?'mui-active':'']"
             v-for="(item,index) in cates"
+            :class="['mui-control-item', item.id==0?'mui-active':'']"
             :key="index"
             @tap="getPhotoList(item.id)"
           >{{item.title}}</a>

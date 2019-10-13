@@ -80,7 +80,7 @@ export default {
     getLunbotu() {
       this.$http.get("api/getthumimages/" + this.id).then(result => {
         if (result.body.status === 0) {
-          //先循环轮播图数组中每一项，Wieitem添加img属性，轮播图组件只认识item.img
+          //先循环轮播图数组中每一项，为item添加img属性，轮播图组件只认识item.img
           result.body.message.forEach(item => {
             item.img = item.src;
           });

@@ -14,13 +14,16 @@ export default {
     },
     methods:{
         //每当文本框的数据被修改的时候，立即把最新的数据传递给父组件
-       countChanged(){
+        countChanged() {
+           // $emit 子组件发生改变，则会调用父组件的相应方法
             this.$emit('getcount',parseInt(this.$refs.numbox.value));
        }
     },
     props: ["max"],
-    watch:{
-        'max': function(newVal,oldVal){
+        watch: {
+        // 监听事件
+        'max': function (newVal, oldVal) {
+            //初始化mui，并设置最大值为商品库存量
             mui(".mui-numbox").numbox().setOption('max',newVal);
         }
     }
